@@ -1,4 +1,3 @@
-html_content_v3 = """
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -7,6 +6,7 @@ html_content_v3 = """
     <title>F4TE - Kaderini Seç</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Model Viewer for 3D Models -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <style>
         :root {
@@ -44,7 +44,7 @@ html_content_v3 = """
             color: inherit;
         }
 
-        /* Navbar - Centered and Removed Button */
+        /* Navbar */
         nav {
             display: flex;
             justify-content: center;
@@ -62,6 +62,8 @@ html_content_v3 = """
         .nav-links {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .nav-links a {
@@ -70,10 +72,6 @@ html_content_v3 = """
             letter-spacing: 1px;
             transition: color 0.3s;
             position: relative;
-        }
-        
-        html {
-            scroll-behavior: smooth;
         }
 
         .nav-links a:hover {
@@ -87,6 +85,7 @@ html_content_v3 = """
             align-items: center;
             justify-content: space-between;
             min-height: 100vh;
+            gap: 40px;
         }
 
         .hero-content {
@@ -110,6 +109,7 @@ html_content_v3 = """
         .hero-buttons {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn-primary {
@@ -151,6 +151,7 @@ html_content_v3 = """
             align-items: center;
             position: relative;
             min-height: 500px;
+            width: 100%;
         }
         
         /* 3D Model Viewer Style */
@@ -161,6 +162,7 @@ html_content_v3 = """
             --poster-color: transparent;
             outline: none;
             filter: drop-shadow(0px 20px 30px rgba(197, 160, 89, 0.15));
+            background-color: transparent; 
         }
 
         /* Features Section */
@@ -218,17 +220,19 @@ html_content_v3 = """
             font-size: 1rem;
         }
 
-        /* Cards Gallery - Horizontal Scroll Layout */
+        /* Cards Gallery */
         .cards-section {
             padding: 120px 0;
             text-align: center;
             background: linear-gradient(to bottom, #050505, #0a0a0a);
+            position: relative;
         }
 
         .cards-section h2 {
             font-size: 2.8rem;
             color: var(--accent-gold);
             margin-bottom: 60px;
+            padding: 0 5%;
         }
 
         .carousel-container {
@@ -345,11 +349,14 @@ html_content_v3 = """
             margin-bottom: 50px;
         }
         
-        .video-section .video-container {
-            max-width: 900px;
+        .video-container-wrapper {
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
+            padding-bottom: 56.25%; 
             height: 0;
             overflow: hidden;
             border-radius: 12px;
@@ -358,9 +365,13 @@ html_content_v3 = """
             background-color: #000;
         }
         
-        .video-section iframe {
+        .video-container iframe {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            border: none;
         }
 
         /* Rules Section */
@@ -481,6 +492,8 @@ html_content_v3 = """
             align-items: center;
             transform: scale(0.9);
             transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 400px;
         }
         
         .modal.show .modal-content {
@@ -502,9 +515,9 @@ html_content_v3 = """
         }
 
         .modal-card {
-            width: 350px;
+            width: 100%;
             height: auto;
-            max-height: 80vh;
+            max-height: 85vh;
             border: 2px solid var(--accent-gold);
             border-radius: 15px;
             display: flex;
@@ -513,6 +526,7 @@ html_content_v3 = """
             background: #0a0a0a;
             box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(197, 160, 89, 0.2);
             overflow: hidden;
+            overflow-y: auto;
         }
         
         .modal-image-container {
@@ -537,38 +551,86 @@ html_content_v3 = """
 
         .modal-desc {
             color: #f0f0f0;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
-        /* Responsive */
+        /* Mobile Responsiveness Improvements */
         @media (max-width: 900px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
                 padding-top: 120px;
+                min-height: auto;
             }
             .hero-buttons {
                 justify-content: center;
             }
+            .hero-image {
+                min-height: 400px;
+                margin-top: 20px;
+            }
+            model-viewer {
+                height: 400px;
+            }
             .features {
                 flex-direction: column;
                 gap: 40px;
+                padding: 60px 5%;
             }
             .features-left {
                 position: static;
             }
             .nav-links {
                 gap: 15px;
+                padding: 0 10px;
             }
             .nav-links a {
                 font-size: 12px;
+            }
+            .hero-title {
+                font-size: 2.5rem;
             }
             .cards-section h2, .rules-section h2, .video-section h2 {
                 font-size: 2.2rem;
             }
             .carousel-nav-btn {
                 display: none;
+            }
+            .game-card {
+                min-width: 250px;
+                height: 375px;
+            }
+            .carousel {
+                padding: 20px 5%;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-image {
+                min-height: 300px;
+            }
+            model-viewer {
+                height: 300px;
+            }
+            .nav-links {
+                gap: 10px;
+            }
+            .nav-links a {
+                font-size: 10px;
+            }
+            .btn-primary, .btn-secondary {
+                padding: 12px 20px;
+                font-size: 14px;
+                width: 100%;
+            }
+            .game-card {
+                min-width: 220px;
+                height: 330px;
             }
         }
     </style>
@@ -595,13 +657,17 @@ html_content_v3 = """
             </div>
         </div>
         <div class="hero-image">
+            <!-- disabled zoom feature with disable-zoom attribute -->
             <model-viewer 
                 src="Kutu.glb" 
                 alt="F4TE Kutu 3D Model" 
                 auto-rotate 
                 camera-controls 
+                disable-zoom
                 shadow-intensity="1" 
-                interaction-prompt="auto">
+                interaction-prompt="auto"
+                environment-image="neutral"
+                exposure="1.2">
             </model-viewer>
         </div>
     </section>
@@ -689,8 +755,10 @@ html_content_v3 = """
 
     <section class="video-section" id="how-to-play">
         <h2 class="cinzel">Nasıl Oynanır?</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/s-K3kIx2lCY" title="F4TE Nasıl Oynanır" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video-container-wrapper">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/s-K3kIx2lCY?rel=0" title="F4TE Nasıl Oynanır" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 
@@ -737,6 +805,7 @@ html_content_v3 = """
         </div>
     </footer>
 
+    <!-- Modal -->
     <div class="modal" id="cardModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -789,7 +858,7 @@ html_content_v3 = """
         const nextBtn = document.getElementById('nextBtn');
         
         // Scroll amounts
-        const scrollAmount = 340; // Card width + gap roughly
+        const scrollAmount = 340;
         
         nextBtn.addEventListener('click', () => {
             slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -807,7 +876,6 @@ html_content_v3 = """
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.style.cursor = 'grabbing';
-            // Disable snap type while dragging for smoother feel
             slider.style.scrollSnapType = 'none';
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
@@ -829,14 +897,13 @@ html_content_v3 = """
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll fast
+            const walk = (x - startX) * 2;
             slider.scrollLeft = scrollLeft - walk;
         });
         
         // Mouse Wheel Horizontal Scrolling
         slider.addEventListener('wheel', (evt) => {
             evt.preventDefault();
-            // Adjust scroll speed with multiplier
             slider.scrollBy({
                 left: evt.deltaY > 0 ? scrollAmount : -scrollAmount,
                 behavior: 'smooth'
@@ -862,9 +929,3 @@ html_content_v3 = """
     </script>
 </body>
 </html>
-"""
-
-with open("f4te_website-v3.html", "w", encoding="utf-8") as f:
-    f.write(html_content_v3)
-
-print("HTML file generated successfully.")
