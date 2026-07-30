@@ -30,7 +30,8 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; 
+            width: 100%;
             scroll-behavior: smooth;
         }
 
@@ -86,11 +87,13 @@
             justify-content: space-between;
             min-height: 100vh;
             gap: 40px;
+            width: 100%;
         }
 
         .hero-content {
             flex: 1;
             max-width: 600px;
+            width: 100%;
         }
 
         .hero-title {
@@ -112,16 +115,21 @@
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background-color: var(--accent-gold);
-            color: var(--bg-color);
+        .btn-primary, .btn-secondary {
             padding: 15px 30px;
-            border: none;
             border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
             text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+            border: none;
         }
 
         .btn-primary:hover {
@@ -131,13 +139,7 @@
         .btn-secondary {
             background-color: transparent;
             color: var(--accent-gold);
-            padding: 15px 30px;
             border: 1px solid var(--accent-gold);
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-align: center;
         }
 
         .btn-secondary:hover {
@@ -162,7 +164,7 @@
             --poster-color: transparent;
             outline: none;
             filter: drop-shadow(0px 20px 30px rgba(197, 160, 89, 0.15));
-            background-color: transparent; /* Ensure transparent background */
+            background-color: transparent; 
         }
 
         /* Features Section */
@@ -172,6 +174,7 @@
             gap: 60px;
             align-items: flex-start;
             background-color: #080808;
+            width: 100%;
         }
 
         .features-left {
@@ -192,6 +195,7 @@
             display: flex;
             flex-direction: column;
             gap: 25px;
+            width: 100%;
         }
 
         .feature-box {
@@ -203,6 +207,7 @@
             flex-direction: column;
             gap: 15px;
             transition: transform 0.3s, border-color 0.3s;
+            width: 100%;
         }
 
         .feature-box:hover {
@@ -222,16 +227,17 @@
 
         /* Cards Gallery */
         .cards-section {
-            padding: 120px 0;
+            padding: 100px 0;
             text-align: center;
             background: linear-gradient(to bottom, #050505, #0a0a0a);
             position: relative;
+            width: 100%;
         }
 
         .cards-section h2 {
             font-size: 2.8rem;
             color: var(--accent-gold);
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             padding: 0 5%;
         }
 
@@ -273,9 +279,9 @@
 
         .carousel {
             display: flex;
-            gap: 40px;
+            gap: 20px;
             overflow-x: auto;
-            padding: 40px 10%;
+            padding: 40px 5%;
             scroll-behavior: smooth;
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -288,35 +294,38 @@
             display: none;
         }
 
+        /* DÜZELTİLDİ: Kartlar artık kırpılmayacak ve tam görünecek */
         .game-card {
-            min-width: 300px;
-            height: 450px;
-            background-color: #111;
+            min-width: 260px;
+            width: 260px;
+            height: auto; /* Sıkı yükseklik kaldırıldı, resme göre şekil alacak */
+            background-color: transparent;
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-            overflow: hidden;
             scroll-snap-align: center;
             flex-shrink: 0;
+            display: flex;
         }
         
         .game-card img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto; /* Sıkı yükseklik kaldırıldı, aspect ratio bozulmayacak */
+            border-radius: 15px;
             transition: transform 0.5s;
+            display: block;
         }
 
         .game-card:hover {
-            transform: translateY(-20px) scale(1.05);
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 0 25px 60px rgba(197,160,89,0.3);
             z-index: 5;
         }
         
         .game-card:hover img {
-            transform: scale(1.08);
+            transform: scale(1.03);
         }
         
         .game-card::after {
@@ -334,29 +343,30 @@
             border-color: rgba(197, 160, 89, 0.8);
         }
 
-        /* Video Section - Updated for Horizontal 16:9 Aspect Ratio */
+        /* Video Section */
         .video-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             background-color: var(--card-bg);
             text-align: center;
             border-top: 1px solid var(--card-border);
             border-bottom: 1px solid var(--card-border);
+            width: 100%;
         }
         
         .video-section h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--accent-gold);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         
         .video-container-wrapper {
-            max-width: 1000px; /* Genişliği artırdım */
+            max-width: 1000px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .video-container {
             position: relative;
-            /* 16:9 Yatay oran için %56.25 padding-bottom (9 / 16 * 100) */
             padding-bottom: 56.25%; 
             height: 0;
             overflow: hidden;
@@ -364,6 +374,7 @@
             border: 1px solid var(--card-border);
             box-shadow: 0 15px 50px rgba(0,0,0,0.8);
             background-color: #000;
+            width: 100%;
         }
         
         .video-container iframe {
@@ -377,21 +388,23 @@
 
         /* Rules Section */
         .rules-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             max-width: 900px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .rules-section h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             text-align: center;
             color: var(--accent-gold);
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .rule-box {
             border-bottom: 1px solid var(--card-border);
             padding: 30px 0;
+            width: 100%;
         }
         
         .rule-box:last-child {
@@ -437,6 +450,7 @@
             padding: 60px 5%;
             text-align: center;
             background-color: #020202;
+            width: 100%;
         }
 
         .footer-content h3 {
@@ -476,6 +490,7 @@
             backdrop-filter: blur(10px);
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding: 20px; 
         }
         
         .modal.show {
@@ -485,7 +500,7 @@
 
         .modal-content {
             background-color: transparent;
-            padding: 20px;
+            padding: 0;
             text-align: center;
             position: relative;
             display: flex;
@@ -503,22 +518,23 @@
 
         .close-btn {
             position: absolute;
-            top: -40px; right: 0;
+            top: -45px; 
+            right: 0;
             font-size: 40px;
-            color: var(--text-muted);
+            color: #fff; 
             cursor: pointer;
             transition: color 0.3s;
             z-index: 2010;
         }
 
         .close-btn:hover {
-            color: var(--text-main);
+            color: var(--accent-gold);
         }
 
         .modal-card {
             width: 100%;
             height: auto;
-            max-height: 85vh;
+            max-height: 80vh; 
             border: 2px solid var(--accent-gold);
             border-radius: 15px;
             display: flex;
@@ -527,7 +543,7 @@
             background: #0a0a0a;
             box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(197, 160, 89, 0.2);
             overflow: hidden;
-            overflow-y: auto;
+            overflow-y: auto; 
         }
         
         .modal-image-container {
@@ -535,11 +551,15 @@
             height: auto;
             position: relative;
             background: #000;
+            display: flex;
+            justify-content: center;
         }
 
         .modal-image-container img {
             width: 100%;
             height: auto;
+            max-height: 50vh; 
+            object-fit: contain;
             display: block;
             border-bottom: 2px solid #222;
         }
@@ -554,84 +574,118 @@
             color: #f0f0f0;
             font-size: 1rem;
             line-height: 1.5;
+            margin: 0;
         }
 
-        /* Mobile Responsiveness Improvements */
+        /* MOBİL UYUMLULUK */
         @media (max-width: 900px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 120px;
-                min-height: auto; /* Remove 100vh constraint for mobile */
+                padding-top: 100px;
+                padding-bottom: 50px;
             }
-            .hero-buttons {
-                justify-content: center;
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-title {
+                font-size: 2.2rem; 
+                word-wrap: break-word;
             }
             .hero-image {
-                min-height: 400px;
-                margin-top: 20px;
+                min-height: 350px;
+                margin-top: 0;
             }
             model-viewer {
-                height: 400px;
+                height: 350px;
             }
             .features {
                 flex-direction: column;
-                gap: 40px;
+                gap: 30px;
                 padding: 60px 5%;
             }
             .features-left {
                 position: static;
             }
+            .features-left h2 {
+                font-size: 2.2rem;
+            }
             .nav-links {
                 gap: 15px;
-                padding: 0 10px;
+                padding: 0;
             }
             .nav-links a {
                 font-size: 12px;
             }
-            .hero-title {
-                font-size: 2.5rem;
+            .cards-section h2 {
+                font-size: 1.8rem;
+                padding: 0 10%; 
+                line-height: 1.3;
+                word-wrap: break-word; 
             }
-            .cards-section h2, .rules-section h2, .video-section h2 {
-                font-size: 2.2rem;
+            .rules-section h2, .video-section h2 {
+                font-size: 2rem;
             }
             .carousel-nav-btn {
-                display: none; /* Hide buttons on mobile, rely on swipe */
+                display: none;
             }
             .game-card {
-                min-width: 250px;
-                height: 375px;
+                /* DÜZELTİLDİ: Tablet boyutları için kartı küçülttüm */
+                min-width: 220px; 
+                width: 220px;
             }
             .carousel {
                 padding: 20px 5%;
                 gap: 20px;
             }
+            .rule-box {
+                padding: 20px 0;
+            }
+            .rule-box p, .rule-box ul {
+                padding-left: 0;
+            }
+            .rule-box ul {
+                padding-left: 20px;
+            }
         }
         
         @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            .hero-image {
-                min-height: 300px;
-            }
-            model-viewer {
-                height: 300px;
+            nav {
+                padding: 15px 5%;
             }
             .nav-links {
                 gap: 10px;
             }
             .nav-links a {
-                font-size: 10px;
+                font-size: 11px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-desc {
+                font-size: 0.95rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
             }
             .btn-primary, .btn-secondary {
-                padding: 12px 20px;
-                font-size: 14px;
-                width: 100%; /* Make buttons full width on small screens */
+                width: 100%;
+            }
+            .cards-section h2 {
+                font-size: 1.6rem;
+                padding: 0 5%;
             }
             .game-card {
-                min-width: 220px;
-                height: 330px;
+                /* DÜZELTİLDİ: Telefon ekranı için kart daha da küçük ve "height: auto" sayesinde orantılı */
+                min-width: 160px;
+                width: 160px;
+            }
+            .carousel {
+                gap: 15px;
+            }
+            .modal-content {
+                padding: 10px;
             }
         }
     </style>
@@ -663,6 +717,7 @@
                 alt="F4TE Kutu 3D Model" 
                 auto-rotate 
                 camera-controls 
+                disable-zoom
                 shadow-intensity="1" 
                 interaction-prompt="auto"
                 environment-image="neutral"
@@ -752,13 +807,10 @@
         </div>
     </section>
 
-    <!-- Video Section - Youtube URL güncellendi ve yatay oran eklendi -->
     <section class="video-section" id="how-to-play">
         <h2 class="cinzel">Nasıl Oynanır?</h2>
         <div class="video-container-wrapper">
             <div class="video-container">
-                <!-- Shorts URL'si embed URL'sine çevrildi (youtube.com/embed/...) -->
-                <!-- Ekstra parametreler eklendi (rel=0 vb.) -->
                 <iframe src="https://www.youtube.com/embed/s-K3kIx2lCY?rel=0" title="F4TE Nasıl Oynanır" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
