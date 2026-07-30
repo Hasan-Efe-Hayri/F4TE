@@ -294,11 +294,10 @@
             display: none;
         }
 
-        /* DÜZELTİLDİ: Kartlar artık kırpılmayacak ve tam görünecek */
         .game-card {
             min-width: 260px;
             width: 260px;
-            height: auto; /* Sıkı yükseklik kaldırıldı, resme göre şekil alacak */
+            height: auto; 
             background-color: transparent;
             border-radius: 15px;
             cursor: pointer;
@@ -312,7 +311,7 @@
         
         .game-card img {
             width: 100%;
-            height: auto; /* Sıkı yükseklik kaldırıldı, aspect ratio bozulmayacak */
+            height: auto; 
             border-radius: 15px;
             transition: transform 0.5s;
             display: block;
@@ -630,7 +629,6 @@
                 display: none;
             }
             .game-card {
-                /* DÜZELTİLDİ: Tablet boyutları için kartı küçülttüm */
                 min-width: 220px; 
                 width: 220px;
             }
@@ -677,7 +675,6 @@
                 padding: 0 5%;
             }
             .game-card {
-                /* DÜZELTİLDİ: Telefon ekranı için kart daha da küçük ve "height: auto" sayesinde orantılı */
                 min-width: 160px;
                 width: 160px;
             }
@@ -712,12 +709,14 @@
             </div>
         </div>
         <div class="hero-image">
+            <!-- DÜZELTİLDİ: disable-pan ile modelin sağa sola/aşağı yukarı kayması engellendi -->
             <model-viewer 
                 src="Kutu.glb" 
                 alt="F4TE Kutu 3D Model" 
                 auto-rotate 
                 camera-controls 
                 disable-zoom
+                disable-pan
                 shadow-intensity="1" 
                 interaction-prompt="auto"
                 environment-image="neutral"
