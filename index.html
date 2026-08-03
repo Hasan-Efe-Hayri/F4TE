@@ -47,7 +47,7 @@
         /* Navbar */
         nav {
             display: flex;
-            justify-content: space-between; /* Menüyü ve logoyu ayırır */
+            justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
             background: rgba(5, 5, 5, 0.95);
@@ -65,7 +65,7 @@
         }
 
         .nav-logo {
-            height: 45px; /* Logonun boyutu */
+            height: 45px;
             width: auto;
             border-radius: 4px;
         }
@@ -104,8 +104,8 @@
             background: linear-gradient(to bottom, #0a0a0a, #131313);
             padding: 100px 5%;
             display: flex;
-            gap: 60px;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
         }
 
         .cards-section {
@@ -215,11 +215,12 @@
             background-color: transparent;
         }
 
-        /* Features Section Details */
+        /* Features Section Details - UPDATED */
         .features-left {
-            flex: 1;
-            position: sticky;
-            top: 120px;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .features-left h2 {
@@ -234,13 +235,13 @@
             color: var(--text-muted);
             line-height: 1.6;
             margin-top: 15px;
-            padding-right: 20px;
         }
 
         .features-right {
-            flex: 1.2;
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
@@ -253,6 +254,7 @@
             flex-direction: column;
             gap: 15px;
             transition: transform 0.3s, border-color 0.3s;
+            text-align: left;
         }
 
         .feature-box:hover {
@@ -453,6 +455,7 @@
             color: var(--text-muted);
             font-size: 1.05rem;
             padding-left: 23px;
+            line-height: 1.7;
         }
         
         .rule-box ul {
@@ -729,12 +732,7 @@
                 height: 400px;
             }
             .features {
-                flex-direction: column;
-                gap: 40px;
                 padding: 60px 5%;
-            }
-            .features-left {
-                position: static;
             }
             .nav-links {
                 gap: 15px;
@@ -838,25 +836,22 @@
             <p class="features-desc">F4TE, arkadaşlarınızla masaya oturduğunuzda hem kahkahalara boğulacağınız hem de zekanızı acımasızca yarıştıracağınız benzersiz bir deneyim sunar. Taktiksel hamlelerle rakiplerinizi alt edin, doğru zamanda doğru kartı oynayın ve masadaki son kişi olmak için hayatta kalın.</p>
         </div>
         <div class="features-right">
+            <!-- YENİDEN YAZILAN OYUN ÖZELLİKLERİ -->
             <div class="feature-box">
-                <h3 class="cinzel">60'tan fazla özel tasarımlı kart</h3>
-                <p>Hamle, Zincir, Kontrol ve Etki kartlarıyla zenginleştirilmiş, her elde farklı bir strateji gerektiren devasa kart havuzu.</p>
+                <h3 class="cinzel">Tam 60 Kartlık Deste</h3>
+                <p>Oyun, denge ve tekrar oynanabilirlik odaklı, dikkatle tasarlanmış tam 60 karttan oluşur. Çekilen her kart masadaki tüm planları altüst edebilir.</p>
             </div>
             <div class="feature-box">
-                <h3 class="cinzel">Her turda değişen akış ve sürpriz mekanikler</h3>
-                <p>"Tersine Çevir", "Sıçrama" ve devredilebilen "Zincir" mekanikleri ile oyunun dengesi bir anda değişebilir. Güvende hissettiğin an sonun olabilir.</p>
+                <h3 class="cinzel">Agresif & Defansif Esneklik</h3>
+                <p>Kartlarını rakibini yok etmek için keskin bir kılıç ya da hayatta kalmak için sağlam bir kalkan olarak kullanabilirsin. Hamle senin.</p>
             </div>
             <div class="feature-box">
-                <h3 class="cinzel">Estetik, karanlık ve mistik bir evren</h3>
-                <p>Siyah, kırmızı, altın ve gümüş tonlarıyla bezenmiş karanlık, gotik ve ritüelistik görsel tarz.</p>
+                <h3 class="cinzel">Kendi Stratejini Yarat</h3>
+                <p>Oyunda tek bir doğru formül yok. Elindeki kartları analiz et, oyun tarzını belirle ve rakiplerinin hamlelerine göre eşsiz kombinasyonlar kur.</p>
             </div>
             <div class="feature-box">
-                <h3 class="cinzel">Gerilim, rekabet ve kahkaha garantisi</h3>
-                <p>Arkadaş ortamında acımasız rekabet. "Lanetli Takas" ve "Kara Büyü" gibi kartlarla dostlukları test eden yüksek tansiyon.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="cinzel">Tek kazanan: Hayatta kalmayı başarabilen</h3>
-                <p>"Elendin" kartından kaç ve rakiplerini elenmeye zorlayarak masadaki son kişi ol.</p>
+                <h3 class="cinzel">Manipülasyon Sanatı</h3>
+                <p>Blöf yap, rakiplerini yanlış yönlendir ve onların hamlelerini önceden tahmin et. F4TE'yi sadece masada değil, rakiplerinin zihninde de kazanabilirsin.</p>
             </div>
         </div>
     </section>
@@ -928,36 +923,31 @@
         <div class="rules-content-wrapper">
             <h2 class="cinzel">Kurallar</h2>
             
-            <!-- Temel anlatıma uygun yeni kurallar kısmı -->
+            <!-- YENİDEN YAZILAN TEMATİK KURALLAR -->
             <div class="rule-box">
-                <h3 class="cinzel">Oyunun Amacı</h3>
-                <p>Masada hayatta kalan son kişi olmak! Oyundaki en büyük tehlike destenin içinde saklanan "Elendin" kartlarıdır. Eğer bir oyuncu bu kartı çekerse (ve elinde kurtarıcı bir hamlesi yoksa) oyuna veda eder.</p>
+                <h3 class="cinzel">1. Ritüele Hazırlık (Dağıtım)</h3>
+                <p>Oyuna başlamadan önce destedeki tüm "Elendin" kartlarını ayırın. Karıştırılmış desteden her oyuncuya gizlice 5'er adet kart dağıtın. Daha sonra, oyuncu sayısının 1 eksiği kadar (örneğin 4 kişiyseniz 3 adet) "Elendin" kartını desteye geri ekleyerek tekrar karıştırın ve desteyi masanın ortasına yerleştirin.</p>
             </div>
 
             <div class="rule-box">
-                <h3 class="cinzel">Oyuna Hazırlık</h3>
-                <p>Başlamadan önce destedeki tüm "Elendin" kartları bir kenara ayrılır. Kalan kartlar karıştırılarak her oyuncuya kapalı şekilde 5'er kart dağıtılır. Daha sonra, oyuncu sayısının 1 eksiği kadar (Örn: 4 kişiyseniz 3 adet) "Elendin" kartı destenin içine gizlenir. Deste tekrar karıştırılır ve masanın ortasına kapalı şekilde yerleştirilir.</p>
+                <h3 class="cinzel">2. Kaderini Çiz (Aksiyon Evresi)</h3>
+                <p>Oyun saat yönünün tersine ilerler. Sıra size geldiğinde, ortadan kart çekmeden önce elinizdeki taktiksel kartları <strong>dilediğiniz kadar</strong> kullanabilirsiniz. Rakiplerinizin elini sabote edebilir, kart çalabilir, geleceği görebilir veya sıranızı bir başkasına paslayacak kombinasyonlar yapabilirsiniz.</p>
             </div>
 
             <div class="rule-box">
-                <h3 class="cinzel">Nasıl Oynanır?</h3>
-                <p>Oyun saat yönünün tersine ilerler. Sıra size geldiğinde yapabileceğiniz iki ana evre vardır:</p>
-                <ul>
-                    <li><strong>Aksiyon Yapmak:</strong> Ortadan kart çekmeden önce elinizdeki özellikleri dilediğiniz kadar kullanabilirsiniz. Rakiplerinize zorluk çıkarabilir, kartlarını çalabilir veya sıranızı savuşturmak için stratejik kartlar oynayabilirsiniz.</li>
-                    <li><strong>Turu Bitirmek:</strong> Elinizdeki tüm aksiyonları yaptıktan sonra (hiç kart oynamamayı da seçebilirsiniz), sıranızı bitirmek için ortadaki desteden 1 adet kart çekmek ZORUNDASINIZ. Kartı çektikten sonra sıra bir sonraki oyuncuya geçer.</li>
-                </ul>
+                <h3 class="cinzel">3. Bedel Ödeme (Çekiliş)</h3>
+                <p>Elinizdeki hamleleri tamamladıktan sonra (veya hiçbir kart oynamamayı seçtiğinizde) turunuzu bitirmek için ortadaki desteden 1 adet kart çekmek <strong>zorundasınız</strong>. Kartı çektikten sonra sıra hemen bir sonraki oyuncuya geçer.</p>
             </div>
 
             <div class="rule-box">
-                <h3 class="cinzel">Hayatta Kalma & Elenme</h3>
-                <p>Ortadan kart çektiğinizde, eğer çektiğiniz kart "Elendin" ise büyük tehlikedesiniz demektir! Eğer elinizde "Yenilmez" adlı kurtarıcı kart varsa, onu kullanarak hayatta kalabilirsiniz. Yenilmez'i oynadıktan sonra "Elendin" kartını kimseye göstermeden destenin DİLEDİĞİNİZ bir yerine gizlice geri koyarsınız. Eğer elinizde Yenilmez yoksa elenirsiniz ve elinizdeki diğer tüm kartlar mezarlığa gider.</p>
+                <h3 class="cinzel">4. Hayatta Kal ya da Yok Ol!</h3>
+                <p>Eğer ortadan çektiğiniz kart "Elendin" ise ölümle yüz yüzesiniz! Eğer elinizde "Yenilmez" veya buna benzer kurtarıcı bir kart varsa oynayarak hayatta kalabilirsiniz. Kurtarıcıyı kullandıktan sonra "Elendin" kartını destenin <strong>istediğiniz bir yerine</strong> gizlice geri koyarsınız. Kurtarıcınız yoksa elenirsiniz ve tüm kartlarınız mezarlığa gider. Masada kalan son kişi ritüeli kazanır!</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <!-- Karanlık ritüele katıl kısmı silindi -->
             <div class="social-icons">
                 <a href="#"><i class="fa-brands fa-discord"></i></a>
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
@@ -978,7 +968,6 @@
         </div>
         <div class="cart-body">
             <div class="cart-item">
-                <!-- Logoyu sipariş menüsünde ürün görseli gibi kullanıyoruz -->
                 <img src="Logo.jpg" alt="F4TE Kutu Oyunu" width="70">
                 <div>
                     <h4>F4TE Kutu Oyunu</h4>
