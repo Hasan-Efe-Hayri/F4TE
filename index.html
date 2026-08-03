@@ -122,12 +122,6 @@
             border-top: 1px solid var(--card-border);
             border-bottom: 1px solid var(--card-border);
         }
-        
-        .rules-section {
-            background: linear-gradient(to bottom, #080808, #030303);
-            padding: 100px 5%;
-            max-width: 100%;
-        }
 
         footer {
             background-color: #030303;
@@ -411,62 +405,6 @@
             border: none;
         }
 
-        /* Rules Section */
-        .rules-content-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .rules-section h2 {
-            font-size: 2.8rem;
-            text-align: center;
-            color: var(--accent-gold);
-            margin-bottom: 60px;
-        }
-
-        .rule-box {
-            border-bottom: 1px solid var(--card-border);
-            padding: 30px 0;
-        }
-        
-        .rule-box:last-child {
-            border-bottom: none;
-        }
-
-        .rule-box h3 {
-            font-size: 1.4rem;
-            color: var(--text-main);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .rule-box h3::before {
-            content: '';
-            display: block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-gold);
-            transform: rotate(45deg);
-        }
-
-        .rule-box p, .rule-box ul {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            padding-left: 23px;
-            line-height: 1.7;
-        }
-        
-        .rule-box ul {
-            padding-left: 45px;
-            margin-top: 10px;
-        }
-        
-        .rule-box li {
-            margin-bottom: 8px;
-        }
-
         /* Social & Footer */
         .social-icons {
             display: flex;
@@ -744,7 +682,7 @@
             .hero-title {
                 font-size: 2.5rem;
             }
-            .cards-section h2, .rules-section h2, .video-section h2 {
+            .cards-section h2, .video-section h2 {
                 font-size: 2.2rem;
             }
             .carousel-nav-btn {
@@ -799,7 +737,6 @@
             <a href="#features">Özellikler</a>
             <a href="#cards">Kartlar</a>
             <a href="#how-to-play">Nasıl Oynanır</a>
-            <a href="#rules">Kurallar</a>
         </div>
     </nav>
 
@@ -808,7 +745,6 @@
             <h1 class="hero-title">F4TE: Desteyi yönet, kaderi eğ, krallığın ritüelini başlat.</h1>
             <p class="hero-desc">Oyuncuların "Elendin" kartını çekmekten kaçındığı, stratejik kart kullanımı ve yüksek gerilimli oyuncu etkileşimine dayalı, karanlık ve gotik temalı masaüstü dijital kart oyunu.</p>
             <div class="hero-buttons">
-                <!-- Satın Al Butonu (Sepet panelini açar) -->
                 <button class="btn-primary" onclick="toggleCartPanel()"><i class="fa-solid fa-cart-shopping"></i> Satın Al</button>
                 <a href="#features" class="btn-secondary">Özellikleri İncele</a>
             </div>
@@ -832,11 +768,9 @@
     <section class="features" id="features">
         <div class="features-left">
             <h2 class="cinzel">Strateji ve Rekabetin Karanlık Dansı</h2>
-            <!-- Yeni özellikler açıklaması eklendi -->
             <p class="features-desc">F4TE, arkadaşlarınızla masaya oturduğunuzda hem kahkahalara boğulacağınız hem de zekanızı acımasızca yarıştıracağınız benzersiz bir deneyim sunar. Taktiksel hamlelerle rakiplerinizi alt edin, doğru zamanda doğru kartı oynayın ve masadaki son kişi olmak için hayatta kalın.</p>
         </div>
         <div class="features-right">
-            <!-- YENİDEN YAZILAN OYUN ÖZELLİKLERİ -->
             <div class="feature-box">
                 <h3 class="cinzel">Tam 60 Kartlık Deste</h3>
                 <p>Oyun, denge ve tekrar oynanabilirlik odaklı, dikkatle tasarlanmış tam 60 karttan oluşur. Çekilen her kart masadaki tüm planları altüst edebilir.</p>
@@ -919,33 +853,6 @@
         </div>
     </section>
 
-    <section class="rules-section" id="rules">
-        <div class="rules-content-wrapper">
-            <h2 class="cinzel">Kurallar</h2>
-            
-            <!-- YENİDEN YAZILAN TEMATİK KURALLAR -->
-            <div class="rule-box">
-                <h3 class="cinzel">1. Ritüele Hazırlık (Dağıtım)</h3>
-                <p>Oyuna başlamadan önce destedeki tüm "Elendin" kartlarını ayırın. Karıştırılmış desteden her oyuncuya gizlice 5'er adet kart dağıtın. Daha sonra, oyuncu sayısının 1 eksiği kadar (örneğin 4 kişiyseniz 3 adet) "Elendin" kartını desteye geri ekleyerek tekrar karıştırın ve desteyi masanın ortasına yerleştirin.</p>
-            </div>
-
-            <div class="rule-box">
-                <h3 class="cinzel">2. Kaderini Çiz (Aksiyon Evresi)</h3>
-                <p>Oyun saat yönünün tersine ilerler. Sıra size geldiğinde, ortadan kart çekmeden önce elinizdeki taktiksel kartları <strong>dilediğiniz kadar</strong> kullanabilirsiniz. Rakiplerinizin elini sabote edebilir, kart çalabilir, geleceği görebilir veya sıranızı bir başkasına paslayacak kombinasyonlar yapabilirsiniz.</p>
-            </div>
-
-            <div class="rule-box">
-                <h3 class="cinzel">3. Bedel Ödeme (Çekiliş)</h3>
-                <p>Elinizdeki hamleleri tamamladıktan sonra (veya hiçbir kart oynamamayı seçtiğinizde) turunuzu bitirmek için ortadaki desteden 1 adet kart çekmek <strong>zorundasınız</strong>. Kartı çektikten sonra sıra hemen bir sonraki oyuncuya geçer.</p>
-            </div>
-
-            <div class="rule-box">
-                <h3 class="cinzel">4. Hayatta Kal ya da Yok Ol!</h3>
-                <p>Eğer ortadan çektiğiniz kart "Elendin" ise ölümle yüz yüzesiniz! Eğer elinizde "Yenilmez" veya buna benzer kurtarıcı bir kart varsa oynayarak hayatta kalabilirsiniz. Kurtarıcıyı kullandıktan sonra "Elendin" kartını destenin <strong>istediğiniz bir yerine</strong> gizlice geri koyarsınız. Kurtarıcınız yoksa elenirsiniz ve tüm kartlarınız mezarlığa gider. Masada kalan son kişi ritüeli kazanır!</p>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="footer-content">
             <div class="social-icons">
@@ -955,7 +862,7 @@
                 <a href="#"><i class="fa-brands fa-steam"></i></a>
             </div>
             <p style="color: var(--text-muted);">iletisim@f4tegame.com</p>
-            <p style="margin-top: 30px; font-size: 0.85rem; color: #444; letter-spacing: 1px;">&copy; 2026 F4TE GAME. TÜM HAKLARI SAKLIDIR.</p>
+            <p style="margin-top: 30px; font-size: 0.85rem; color: #444; letter-spacing: 1px;">&copy; 2026 XAOS GAME. TÜM HAKLARI SAKLIDIR.</p>
         </div>
     </footer>
 
